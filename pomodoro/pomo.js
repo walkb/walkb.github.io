@@ -134,8 +134,8 @@ var options = {
 }
 
 function sendNotification(msg) {
-  alert(msg);
   playAlert();
+  alert(msg);
 }
 
 // timer functionality
@@ -145,6 +145,7 @@ class Countdown {
     this.minutes = min;
     this.seconds = sec;
     this.target = new Date();
+    this.pause = new Date();
     // sets the target -- one minute is 60000 ms and a second is 1000 ms
     this.target.setTime(this.target.getTime() + min * 60000 + sec * 1000);
   }
@@ -188,6 +189,9 @@ function startTimer() {
   // }
   // check if already running
   if (!isRunning) {
+    // pause resume
+    let diff = Date.now() - current.pause.getTime();
+    current.target.setTime(current.target.getTime() + diff);
     isRunning = true;
     //check resume
     if (current.isDone()) {
@@ -214,6 +218,7 @@ function startTimer() {
     toggleBreakButton();
     display();
     tick();
+    // starting only, not resuming
     timeInterval = setInterval(tick, 500);
   }
 }
@@ -221,8 +226,9 @@ function startTimer() {
 function pauseTimer() {
   var button = document.getElementById("pause_button");
   button.disabled = true;
-  clearInterval(timeInterval);
   isRunning = false;
+  clearInterval(timeInterval);
+  current.pause = new Date();
   if (isBreak) {
     changeColor(blue_gray);
   }
