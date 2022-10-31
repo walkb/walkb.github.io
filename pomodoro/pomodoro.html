@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pomodoro</title>
+    <link rel="icon" href="../images/tomato.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="pomostyle.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="pomo.js"></script>
+  </head>
+  
+  <body>
+    <!-- audio !-->
+    <audio id="alert_sound" src="alert.mp3" preload="auto"></audio>
+    
+    <div class="loader"> 
+      <image id="tomato" src="../images/tomato.png">
+    </div>
+
+    <div class="content">
+      <div class="home"> </div>
+
+      <div> 
+        <h1 id="header">pomodoro</h1>
+      </div>
+      
+      <div class="pomo" id="pomobox">
+        
+        <div class="timer"> 
+          <p id="clock">25M 0S</p>
+        </div>
+
+        
+        <div class="button_group" id="button_group">
+          <div class="button_div" id="start">
+            <button class="button" onclick="main(1)">start</button>
+          </div>
+          
+          <div class="button_div" id="pause"> 
+            <button class="button" disabled onclick="main(2)" id="pause_button">pause</button>
+          </div>
+          <div class="button_div" id="reset"> 
+            <button class="button" onclick="main(0)">reset</button>
+          </div>
+          <div class="button_div" id="switch"> 
+            <button class="button" id="switch_button" onclick="main(3)">switch</button>
+          </div>
+          <div class="button_div" id="settings"> 
+            <button class="button" onclick="main(4)">settings</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="settings_tab">
+        <p style = "text-align:center">input the number of minutes for each section</p>
+        <form>
+          <div class="text_input">
+            <p>work</p>
+            <input type="number" name="work_min_input" id="work_min_input" value="25" min="0" onblur="resetOnBlur()" />
+          </div>
+          
+          <div class="text_input">
+            <p>break</p>
+            <input type="number" name="break_min_input" id="break_min_input" value="5" min="0" onblur="resetOnBlur()" />
+          </div>
+        </form>
+      </div>
+      
+      <div class="attribution">
+        Sound effects from <a href="https://www.zapsplat.com" target="_blank">zapsplat.com</a>
+      </div>
+      
+    </div>
+  </body>

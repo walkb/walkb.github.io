@@ -1,0 +1,163 @@
+/*--Screen size adjustments --*/
+
+@media screen and (max-width: 620px) {
+  div.header {
+    line-height: 35px;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  div.header {
+    line-height: 10px;
+  }
+  div.image_container {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  img.image, img.gif {
+    max-width: 70vw;
+    width: auto;
+    object-fit: contain;
+  }
+  div.image_container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 701px) {
+  img.image, img.gif {
+    max-width: 25vw;
+    width: auto;
+    object-fit: contain;
+  }
+  div.image_text {
+    margin-left: 25px;
+  }
+}
+
+/*-- Theme website --*/
+
+body { 
+  background-color: #27272b;
+  color: white;
+  font-family: 'Raleway', sans-serif; 
+}
+
+
+/*-- loading screen --*/
+.loader {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  border: 16px solid #545454; /* Light gray */
+  border-top: 16px solid #adadad; /* Dark gray */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes spin {
+  0% { opacity: 0%; }
+  25% { -webkit-transform: rotate(0deg); opacity 100%; }
+  75% { -webkit-transform: rotate(720deg); }
+  100% { opacity: 0%; }
+}
+
+@keyframes spin {
+  0% { opacity: 0%; }
+  25% { opacity: 100%; transform: rotate(0deg); }
+  75% { opacity: 100%; transform: rotate(720deg); }
+  100% { opacity: 0%; transform: rotate(720deg);}
+}
+
+/*-- Main content fade in --*/
+
+div.content {
+  opacity: 0%;
+  animation-delay: 3s;
+  animation-duration: 3s;
+  animation-name: fadein;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+    
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+/*-- Main content style --*/
+
+div.content {
+  margin: 50px;
+  margin-left, margin-right: 20%;
+}
+
+div.text, div.subheader {
+    color: #c9c9c9
+}
+
+div.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*-- Icon adjustments --*/
+
+div.icon_container {
+  display: flex;
+}
+
+/*-- Image adjustments --*/
+
+div.image_container {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+h2.image_header {
+  color: #ffffff
+}
+
+img.image, img.gif {
+  border-radius: 10px;
+  filter: drop-shadow(0.35rem 0.35rem 0.1rem #ffffff);
+}
+
+
+
+/*-- Animating images --*/
+
+img.image, img.gif {
+  -webkit-filter: grayscale(90%);
+	filter: grayscale(90%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+img.image:hover, img.gif:hover {
+  -webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+/*-- Icons --*/
+
+.icon {
+  padding-right: 5px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25%;
+}
