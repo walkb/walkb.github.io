@@ -1,9 +1,17 @@
-# Walker's Old Portfolio
-Hi! I'm Walker, a CS student at the University of Michigan.
+# Legacy Tetr.io Portfolio
+Hi, my name's Walker. This repository holds the remnants of what was the beginnings of my *very first* website.
 
-This was a work in progress of a tetr.io (a battle royale version of Tetris I used to play a lot) inspired portfolio.
+It was heavily inspired by Tetr.io, the battle royale Tetris game. 
 
-I am no longer planning on finishing this iteration of portfolio, as it uses pure JavaScript rather than a modern framework, which I believe would be more valuable to my skills as a developer in the future.
-(I'm planning on working on this more once I gain more experience in my class!)
+## 🔧 Features
+- Responsive and interactiveness
+- Tetrio-inspired design + interactions
+- Smooth animations
 
-Feel free to click around, but if you would like a preview of my next iteration of portfolio, please go to walkerbroadbent.com. :)
+##🕹️ Why It’s Still Here
+It's a tribute to where I truly started on my own journey. 
+At this time, I didn't know any better so I was trying to populate the website with strange methods and whatnot 
+(I had just started learning about data structures at the time, which definitely did not help me in organizing anything anyway!)
+
+##🚧 Note
+This repo is no longer maintained. For my latest work, check out my [current portfolio](https://www.walkerbroadbent.com) instead!
